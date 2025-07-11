@@ -5,10 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.annotation.NonNull
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
 
 class personaAdapter(private val lista : List<Persona>):RecyclerView.Adapter<personaAdapter.personaVH>(){
 
@@ -28,8 +25,8 @@ class personaAdapter(private val lista : List<Persona>):RecyclerView.Adapter<per
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: personaVH, position: Int) {
         val usr = lista[position]
-        holder.nombreTxtView.text = usr.Nombre
-        holder.dniTxtView.text = usr.Dni.toString()
+        holder.nombreTxtView.text = usr.nombre
+        holder.dniTxtView.text = usr.id.toString()
     }
 
     override fun getItemCount(): Int = lista.size
